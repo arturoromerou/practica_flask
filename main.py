@@ -4,8 +4,6 @@ from app.routes.route_error import error_handler
 
 app = Flask(__name__) #nombre del app
 
-@app.route("/") # ruta del entorno
-
 routes(app)
 error_handler(app)
 
