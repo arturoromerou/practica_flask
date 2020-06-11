@@ -1,3 +1,8 @@
+from app.classes.companies import Companies
+
+company = Companies()
+print(company)
+
 def routes(app):
     @app.route('/') # ruta del entorno
     def hello_world():
@@ -7,9 +12,9 @@ def routes(app):
     def employees():
         return 'Empleados'
 
-    @app.route('/companies')
+    @app.route('/companies', methods=['POST'])
     def companies():
-        return 'Empresas'
+        return company.companies_all(app)
 
     @app.route('/employees/1')
     def employees_id():
